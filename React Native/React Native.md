@@ -213,6 +213,7 @@ React
 **:** React Native Android **:** 
 
 ---
+
 #[fit] Time to face real projects problems 
 
 <br>
@@ -222,10 +223,11 @@ React
 <br>
 
 ---
+
 # Time to face real problems
 
 - Hardware access
-- Native code (**Swift** and Objective - C)
+- Native code (**Swift** and Objective-C)
 - Performance
 
 **- - - - - - - - - -**
@@ -234,8 +236,60 @@ React
 - Support and community
 
 ---
-# Native code 
 
+## Native code (**Objc**)
+
+```objc
+//Objective-C
+@implementation MyComponent
+RCT_EXPORT_MODULE();
+
+//RCT_EXPORT_METHOD = - (void)
+RCT_EXPORT_METHOD(sendString:(NSString *)string) {
+  NSLog(@"Objc My Component Received: %@", string);
+}
+
+@end
+```
+**- - -**
+
+```javascript
+//JS 
+var ObjcComponent = require('react-native').NativeModules.MyComponent;
+ObjcComponent.sendString('Hello Objc');
+```
+
+---
+
+### Native code  (**Swift**)
+
+```swift
+//Swift
+@objc(MySwiftComponent) class MySwiftComponent : NSObject {
+
+  @objc func sendString(x: String) {
+    print("MySwiftComponent Received: \(x)")
+  }
+}
+```
+ 
+```objc
+//Objective-C
+@interface RCT_EXTERN_MODULE(MySwiftComponent, NSObject)
+
+RCT_EXTERN_METHOD(sendString:(NSString *)x)
+
+@end
+```
+
+```javascript
+//JS 
+var SwiftComponent = require('react-native').NativeModules.MySwiftComponent;
+SwiftComponent.sendString('Swift all the things 😎');
+```
+
+
+<!--
 - Swift Native Module
 
 	*Only class methods
@@ -245,8 +299,21 @@ React
    
 - Custom UI Component
 	*Explore it*
+-->
 
 ---
+
+### Limitations
+
+- Methods**:** instance only
+- Initializer**:** `+(instancetype)new` 
+- Instance creation control**:** None, 1 instance
+ <sub>script</sub>
+- Arguments**:** JSON types + **RCTConvert**
+- Asynchronous communication
+
+---
+
 #[fit] Performance
 <br>
 <br>
@@ -255,6 +322,7 @@ React
 <br>
 
 ---
+
 # Performance
 - Animations
 - React JS code runs on Background thread
