@@ -124,3 +124,4 @@ var styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('TryRN', () => TryRN);
+//module.exports = requireNativeComponent('RCTMap', null);

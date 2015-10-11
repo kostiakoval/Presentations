@@ -408,6 +408,15 @@ var subscription = NativeAppEventEmitter.addListener('MyEvent', (event) =>
 
 ---
 
+# UI Component
+
+---
+
+
+---
+
+---
+
 ### Limitations 
 
 - Methods**:** instance only

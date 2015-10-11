@@ -23,6 +23,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		B540FCDD1BCA578D00D3B9A2 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540FCDC1BCA578D00D3B9A2 /* MyView.m */; settings = {ASSET_TAGS = (); }; };
 		B553F5631BC926A900A15FDD /* CodeExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = B553F55F1BC926A900A15FDD /* CodeExamples.m */; settings = {ASSET_TAGS = (); }; };
 		B553F5641BC926A900A15FDD /* MyComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B553F5611BC926A900A15FDD /* MyComponent.m */; settings = {ASSET_TAGS = (); }; };
 		B553F5711BC9298A00A15FDD /* MySwiftComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553F5701BC9298A00A15FDD /* MySwiftComponent.swift */; settings = {ASSET_TAGS = (); }; };
@@ -131,6 +132,8 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		B540FCDB1BCA578D00D3B9A2 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		B540FCDC1BCA578D00D3B9A2 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		B553F55E1BC926A900A15FDD /* CodeExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeExamples.h; sourceTree = "<group>"; };
 		B553F55F1BC926A900A15FDD /* CodeExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeExamples.m; sourceTree = "<group>"; };
 		B553F5601BC926A900A15FDD /* MyComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyComponent.h; sourceTree = "<group>"; };
@@ -319,9 +322,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B540FCD01BCA577A00D3B9A2 /* MyView */ = {
+			isa = PBXGroup;
+			children = (
+				B540FCDB1BCA578D00D3B9A2 /* MyView.h */,
+				B540FCDC1BCA578D00D3B9A2 /* MyView.m */,
+			);
+			path = MyView;
+			sourceTree = "<group>";
+		};
 		B553F55D1BC926A900A15FDD /* MyCode */ = {
 			isa = PBXGroup;
 			children = (
+				B540FCD01BCA577A00D3B9A2 /* MyView */,
 				B553F55E1BC926A900A15FDD /* CodeExamples.h */,
 				B553F55F1BC926A900A15FDD /* CodeExamples.m */,
 				B553F5601BC926A900A15FDD /* MyComponent.h */,
@@ -567,6 +580,7 @@
 				B553F5631BC926A900A15FDD /* CodeExamples.m in Sources */,
 				B553F5711BC9298A00A15FDD /* MySwiftComponent.swift in Sources */,
 				B553F5641BC926A900A15FDD /* MyComponent.m in Sources */,
+				B540FCDD1BCA578D00D3B9A2 /* MyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
