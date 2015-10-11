@@ -471,27 +471,52 @@ render: function() {
 
 ---
 
+#[fit] Performance
+<br>
+#[fit] 👌
+#[fit] **_60_** FPS
+<br>
+
+---
+
 # Performance
+- React handles DOM manipulation and re-rendering
+
+<br>
+
 - Animations *__+__* Navigation Transition
 - React JS code runs on Background thread
 	**(Main thread - UI Only)**
+
+
+
+---
+
 <br>
-- React handles DOM manipulation and re-rendering
+###[fit]_**  JavaScriptCore   **_
+<br>
+iOS 7 - WebKit JavaScript engine
+      __*__ No JIT support 
+
+^ Honourable mention, the father component
 
 ---
 
-# Performance
+# Stability
 
-JavaScriptCore - WebKit
+- Solid architecture 💪
+- Beta v0.12.0
+- Rapid development/changes
+- Apps Works **Fine**, no Crashes
 
 ---
+
 
 # Support and community
-
 - Open Sourced 👏
-	*All is in your hands* +
-	PR are Welcomed 😘
-- Active on Twitter
+	<sub> *All is in your hands* + </sub>
+	<sub> PR are Welcomed 😘 </sub>
+- Active on Twitter 🐤
 - Documentation + Examples
 **-------**
 - StackOverflow  👎
@@ -506,9 +531,16 @@ Do I want to code more in React - **Hell Yeah !!**
 
 ---
 #**Thanks**
-<br>
-# 🙇 ![](Img/ava-round.png)
 # Q&A
+
+# 🙇 ![](Img/ava-round.png)
+
+
+- [github.com/kostiakoval/Presentations](http://github.com/kostiakoval/Presentations)  **"React_Native"**
+- [@KostiaKoval](https://twitter.com/KostiaKoval)
+- [kostiakoval.github.io](http://kostiakoval.github.io)
+
+<br>
 
 ---
 
