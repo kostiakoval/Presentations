@@ -8,10 +8,21 @@ autoscale: true
 ---
 
 # Me
-
-- iOS Dev 
+<!--				var height = 172-->
+```swift 
+				let sex = 👨🏻 
+				var job = "iOS Dev"
+				var company = 🚀🏭 // Rocketfarm
+				
+				let ❤️ = 🐦 //"Swift"
+				❤️🐦 < ❤️👸 == true   
+				
+				var like = 📙 + ✏️ + 💻
+				var author = 👨🏻 + 📙 + 🐦
+```
+<!--- iOS Dev 
 - ❤️ Swift
-- Rocketfarm
+- Rocketfarm-->
 
 ---
 
@@ -49,9 +60,10 @@ autoscale: true
 
 - July 10 2008: *iPhone 3G, App Store and Facebook app*
 - mid-2010: *Facebook's "Write Once, Run Everywhere"*
-- 2 April 2009 *PhoneGap - wins People's Choice Award at Web 2.0 Conference*
+- 2 April 2009 **PhoneGap** *- wins People's Choice Award at Web 2.0 Conference*
 
 ---
+
 <br>
 # Stage **_2_**
 # :confused: 
