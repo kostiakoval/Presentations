@@ -410,10 +410,32 @@ var subscription = NativeAppEventEmitter.addListener('MyEvent', (event) =>
 
 # UI Component
 
----
+```objc
+@interface RCTMyViewManager : RCTViewManager
+@end
 
+@implementation RCTMyViewManager
 
----
+RCT_EXPORT_MODULE()
+
+- (MyView *)view {
+  return [MyView  new];
+}
+
+@end
+```
+
+```javascript
+//JS
+var { requireNativeComponent } = require('react-native');
+var MyView = requireNativeComponent('RCTMyView', null);
+module.exports = MyView
+
+render: function() {
+  <MyView> </MyView>
+}
+
+```
 
 ---
 

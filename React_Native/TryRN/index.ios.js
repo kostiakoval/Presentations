@@ -2,14 +2,11 @@
  * @flow
  */
 
- /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-//'use strict';
+'use strict';
 require('regenerator/runtime');
 
 let React = require('react-native');
+let MyView = require('./MyView');
 
 var {
   AppRegistry,
@@ -99,6 +96,11 @@ var TryRN = React.createClass({
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <MyView myProperty = {true}  opaque = {true}  onEventFired = { (event) => 
+          console.log('onEventFired!!!')
+        }>
+         
+        </MyView>
       </View>
     );
   }
@@ -124,4 +126,3 @@ var styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('TryRN', () => TryRN);
-//module.exports = requireNativeComponent('RCTMap', null);
