@@ -439,6 +439,17 @@ render: function() {
 
 ---
 
+# UI Component 
+# +
+
+- Custom properties
+- Events
+- JS Component wrapper
+- Styles
+...
+
+---
+
 ### Limitations 
 
 - Methods**:** instance only
@@ -461,13 +472,20 @@ render: function() {
 ---
 
 # Performance
-- Animations
+- Animations *__+__* Navigation Transition
 - React JS code runs on Background thread
 	**(Main thread - UI Only)**
 <br>
 - React handles DOM manipulation and re-rendering
 
 ---
+
+# Performance
+
+JavaScriptCore - WebKit
+
+---
+
 # Support and community
 
 - Open Sourced 👏
