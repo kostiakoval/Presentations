@@ -237,7 +237,7 @@ React
 
 ---
 
-## Native code (**Objc**)
+### Native code (**Objc**)
 
 ```objc
 //Objective-C
@@ -261,7 +261,7 @@ ObjcComponent.sendString('Hello Objc');
 
 ---
 
-### Native code  (**Swift**)
+### Native code (**Swift**)
 
 ```swift
 //Swift
@@ -292,7 +292,7 @@ SwiftComponent.sendString('Swift all the things 😎');
 <!--
 - Swift Native Module
 
-	*Only class methods
+	*Only instance methods
 	Can't control instance creations
 	Asynchronous communication
 	Callback called once. Not signals/ Stream of events*
@@ -303,14 +303,120 @@ SwiftComponent.sendString('Swift all the things 😎');
 
 ---
 
-### Limitations
+# Native *→* JS
+
+```objc
+//Objective-C
+RCT_EXPORT_METHOD(getString:(RCTResponseSenderBlock)callback) {
+  callback(@[[NSNull null], @"Result"]);
+}
+```
+
+```swift
+@objc func getString(response: RCTResponseSenderBlock ) {
+  response([NSNull(), "Result"])
+}
+//+ RCT_EXTERN_METHOD(getString:(RCTResponseSenderBlock)response) in Objc 
+```
+
+```javascript
+//JS
+ObjcComponent.getString((error, param) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(param);
+  }
+});
+```
+
+---
+
+# Native *→* JS (*Promises*)
+
+```objc
+RCT_EXPORT_METHOD(getStringAsync:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+
+  BOOL yesNo = arc4random_uniform(2);
+  if (yesNo) {
+    resolve(@"Yes");
+  } else {
+    reject([NSError errorWithDomain:@"NO!" code:0 userInfo:nil]);
+  }
+}
+```
+```swift
+@objc func getStringAsync(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
+  let yesNo = true
+  if (yesNo) {
+    resolve("Yes")
+  } else {
+    reject(NSError(domain:"NO!", code:0, userInfo:nil))
+  }
+}
+//+ RCT_EXTERN_METHOD(getStringAsync:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
+```
+**- - JS - -**
+
+---
+
+# Native *→* JS (*Promises*)
+
+```objc
+//Objective-C
+- (void)getStringAsync:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject
+```
+
+```javascript
+//JS
+ObjcComponent.getStringAsync().then((value) => {
+  console.log(value);
+}, (error) => {
+  console.log(error);
+});
+
+// ES7 + Babel JavaScript compiler 
+async function fetchString() {
+  let string = await ObjcComponent.getStringAsync();
+  console.log("Async +await: " + string);
+}
+```
+
+---
+
+# Native *→* JS (*Events*)
+
+```objc
+#import "RCTEventDispatcher.h"
+
+@synthesize bridge = _bridge; // Implementing RCTBridgeModule
+
+- (void)sendEventToJS {
+  [self.bridge.eventDispatcher sendAppEventWithName:@"MyEvent"
+                                               body:@{@"param": @"Hello JS"}];
+}
+```
+
+```javascript
+var { NativeAppEventEmitter } = React;
+var subscription = NativeAppEventEmitter.addListener('MyEvent', (event) =>
+ console.log("§ Event: " + event)
+);
+```
+ 
+😢 But `synthesize` is not available in Swift
+
+---
+
+### Limitations 
 
 - Methods**:** instance only
+- Instance creation control**:** None,  
+     <sub>1 instance only. Created and cached by `NativeModules`</sub>
+
 - Initializer**:** `+(instancetype)new` 
-- Instance creation control**:** None, 1 instance
- <sub>script</sub>
 - Arguments**:** JSON types + **RCTConvert**
-- Asynchronous communication
+- Communication**:** Asynchronous
 
 ---
 
