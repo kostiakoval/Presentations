@@ -17,12 +17,19 @@ autoscale: true
 				let ❤️ = 🐦 //"Swift"
 				❤️🐦 < ❤️👸 == true   
 				
-				var like = 📙 + ✏️ + 💻
-				var author = 👨🏻 + 📙 + 🐦
+				var like = 💻 + 📙 + ✏️
 ```
-<!--- iOS Dev 
-- ❤️ Swift
-- Rocketfarm-->
+---
+
+
+
+```swift
+	 var author = 👨🏻 + 📙 + 🐦
+```
+#[fit] Coming Soon. :)
+
+
+![fit right](Img/B04807_Cover.jpg)
 
 ---
 
@@ -233,6 +240,18 @@ React
 #[fit]  💪😈💪  
 <br>
 <br>
+
+---
+
+#[fit] Time to face real projects problems 
+
+**|**
+**|**
+**|**
+                      React - JS        **|**        Native - (Swift or Objc)
+**|**
+**|**
+**|**
 
 ---
 
@@ -520,6 +539,8 @@ iOS 7 - WebKit JavaScript engine
 - Beta v0.12.0
 - Rapid development/changes
 - Apps Works **Fine**, no Crashes
+-  In production 
+	<sub> - Facebook Groups, Facebook App, Leanpub ... </sub>
 
 ---
 
@@ -553,15 +574,3 @@ Do I want to code more in React - **Hell Yeah !!**
 - [kostiakoval.github.io](http://kostiakoval.github.io)
 
 <br>
-
----
-
-
-
-## Smart copy & paste
-
-To copy a slide from Deckset to another document, just ⌘+C it, then ⌘+V it into your editor (it will paste the _Markdown_) or into any application that handles PDFs (it will paste the slide as _PDF_).
-
----
-
-# [fit] ⌘+C ⌘+V = :v:
