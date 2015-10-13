@@ -277,7 +277,7 @@ RCT_EXPORT_MODULE();
 
 //RCT_EXPORT_METHOD = - (void)
 RCT_EXPORT_METHOD(sendString:(NSString *)string) {
-  NSLog(@"Objc My Component Received: %@", string);
+  NSLog(@"Received: %@", string);
 }
 
 @end
@@ -299,7 +299,7 @@ ObjcComponent.sendString('Hello Objc');
 @objc(MySwiftComponent) class MySwiftComponent : NSObject {
 
   @objc func sendString(x: String) {
-    print("MySwiftComponent Received: \(x)")
+    print("Received: \(x)")
   }
 }
 ```
@@ -353,11 +353,7 @@ RCT_EXPORT_METHOD(getString:(RCTResponseSenderBlock)callback) {
 ```javascript
 //JS
 ObjcComponent.getString((error, param) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(param);
-  }
+  console.error(error + " " + param); 
 });
 ```
 
@@ -368,7 +364,7 @@ ObjcComponent.getString((error, param) => {
 ```objc
 RCT_EXPORT_METHOD(getStringAsync:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
 
-  BOOL yesNo = arc4random_uniform(2);
+  BOOL yesNo = YES;
   if (yesNo) {
     resolve(@"Yes");
   } else {
@@ -379,7 +375,7 @@ RCT_EXPORT_METHOD(getStringAsync:(RCTPromiseResolveBlock)resolve rejecter:(RCTPr
 ```swift
 @objc func getStringAsync(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
   let yesNo = true
-  if (yesNo) {
+  if (true) {
     resolve("Yes")
   } else {
     reject(NSError(domain:"NO!", code:0, userInfo:nil))
