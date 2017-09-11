@@ -1,0 +1,5 @@
+module sysMod [system] {
+  header "/usr/include/sysMod.h"
+  link "sysMod"
+  export *
+}
